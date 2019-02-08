@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Addin
+    id = "MonoDevelop.OpenTerminal">
+    <Header>
+        <Name>OpenTerminal Addin</Name>
+        <Description>VS4Mac addin to open a terminal from the IDE.</Description>
+        <Author>Javier Suárez Ruiz</Author>
+        <Copyright>Javier Suárez Ruiz</Copyright>
+        <Url>https://github.com/jsuarezruiz/VSMac-OpenTerminal</Url>
+    </Header>
+    <Extension 
+        path="/MonoDevelop/Ide/Commands">
+        <Command 
+            id="OpenTerminal.Commands.OpenTerminalCommand" 
+            _label="Open Terminal" 
+            defaultHandler="VS4Mac.OpenTerminal.Commands.OpenTerminalCommand" />
+    </Extension>
+    <Extension 
+        path="/MonoDevelop/Ide/MainMenu/Tools">
+        <CommandItem 
+            id="OpenTerminal.Commands.OpenTerminalCommand" />
+    </Extension>
+    <Extension 
+        path="/MonoDevelop/Ide/ContextMenu/ProjectPad">
+        <Condition 
+            id="ItemType" 
+            value="Project|Solution">
+            <CommandItem 
+                id="OpenTerminal.Commands.OpenTerminalCommand" />
+        </Condition>
+    </Extension>
+</Addin>
